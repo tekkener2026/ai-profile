@@ -2,6 +2,8 @@
 
 换 Agent、换模型、换电脑时，让新环境快速了解我的沟通习惯、执行边界和已验证过的结论。
 
+仓库地址：[github.com/tekkener2026/ai-profile](https://github.com/tekkener2026/ai-profile)
+
 ## 文件分工
 
 | 文件 | 作用 | 何时读 |
@@ -15,7 +17,7 @@
 ## 给新 Agent 的一句话开场
 
 ```
-先读 https://raw.githubusercontent.com/<你的用户名>/ai-profile/main/AGENTS.md 再开始。
+先读 https://raw.githubusercontent.com/tekkener2026/ai-profile/main/AGENTS.md 再开始。
 需要环境细节读 ENVIRONMENT.md，需要历史结论读 MEMORY.md。
 ```
 
