@@ -1,0 +1,14 @@
+# 备份与本地临时文件
+*.bak
+*.bak-*
+*.log
+.DS_Store
+Thumbs.db
+
+# 绝不提交的敏感内容
+.env
+.env.*
+auth.json
+*.pem
+*.key
+secrets.*
