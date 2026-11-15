@@ -3,6 +3,7 @@
 # 说明：仓库是唯一源文件，本脚本只做单向覆盖；被覆盖的原文件会留 .bak 备份
 
 $ErrorActionPreference = 'Stop'
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}
 
 $repo   = if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }
 $stamp  = Get-Date -Format 'yyyyMMdd-HHmmss'
@@ -25,7 +26,8 @@ foreach ($t in $targets) {
     if (Test-Path $t) {
         Copy-Item $t "$t.bak-$stamp" -Force
     }
-    Set-Content -Path $t -Value $content -Encoding UTF8
+    # 用 UTF-8 无 BOM 写入，避免部分解析器把 BOM 当成正文
+    [IO.File]::WriteAllText($t, $content, (New-Object Text.UTF8Encoding($false)))
     Write-Host "已同步：$t"
 }
 
